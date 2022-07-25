@@ -1,4 +1,4 @@
-package com.sergeev.application.lessonOne;
+package com.sergeev.application.obsoleta.lesson1;
 
 public class TestBean {
 
