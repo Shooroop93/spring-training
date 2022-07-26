@@ -15,6 +15,14 @@ public class MusicPlayer {
     public MusicPlayer() {
     }
 
+    private void init() {
+        System.out.println("I'am init");
+    }
+
+    private void destroy() {
+        System.out.println("I'am destroy");
+    }
+
     public String getName() {
         return name;
     }
