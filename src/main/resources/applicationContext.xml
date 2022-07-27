@@ -11,36 +11,4 @@
 
     <context:component-scan base-package="com.sergeev.application" />
 
-    <bean id="musicBean1"
-          class="com.sergeev.application.actual.ClassicalMusic">
-    </bean>
-
-    <bean id="musicBean2"
-          class="com.sergeev.application.actual.RockMusic">
-    </bean>
-
-    <bean id="musicBean3"
-          class="com.sergeev.application.actual.ClassicalMusic"
-          scope="prototype"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          factory-method="getClassicalMusic">
-    </bean>
-
-    <bean id="musicPlayer"
-          class="com.sergeev.application.actual.MusicPlayer"
-          scope="prototype"
-          init-method="init"
-          destroy-method="destroy">
-        <property name="musicList">
-            <list>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-                <ref bean="musicBean3"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer2.name}"/>
-        <property name="volume" value="${musicPlayer2.volume}"/>
-    </bean>
 </beans>
