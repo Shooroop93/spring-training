@@ -2,6 +2,9 @@ package com.sergeev.application.actual;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestSpring {
 
     public static void main(String[] args) {
@@ -19,6 +22,15 @@ public class TestSpring {
         MusicPlayer musicPlayer4 = context.getBean("musicPlayer", MusicPlayer.class);
         MusicPlayer musicPlayer5 = context.getBean("musicPlayer", MusicPlayer.class);
 
+        Music music = context.getBean("rockMusicBean", Music.class);
+        Music classicMusic = context.getBean("classicalMusic", ClassicalMusic.class);
+        List<Music> musicList = new ArrayList<>();
+        musicList.add(music);
+        musicList.add(classicMusic);
+        MusicPlayer musicPlayer = new MusicPlayer(musicList);
+
+        System.out.println("------");
+        musicPlayer.playMusicList();
 
         context.close();
     }
