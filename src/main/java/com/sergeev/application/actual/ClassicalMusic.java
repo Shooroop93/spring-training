@@ -1,12 +1,14 @@
 package com.sergeev.application.actual;
 
 import com.sergeev.Utill.RandomUttils;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Scope("singleton")
 public class ClassicalMusic implements Music {
 
     private ClassicalMusic () {}
