@@ -1,6 +1,10 @@
 package com.sergeev.application.actual;
 
+import com.sergeev.Utill.RandomUttils;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ClassicalMusic implements Music {
@@ -20,6 +24,10 @@ public class ClassicalMusic implements Music {
     }
     @Override
     public String getSong() {
-        return "Hungarian Rhapsody";
+        List<String> listSong = new ArrayList<>();
+        listSong.add("Hungarian Rhapsody");
+        listSong.add("testClassical");
+        listSong.add("classicalTest");
+        return listSong.get(RandomUttils.getRandomNumber(listSong.size()));
     }
 }
